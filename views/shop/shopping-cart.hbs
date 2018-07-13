@@ -1,0 +1,57 @@
+{{# if products}}
+<div class="row">
+    <div class=" col-md-6 ">
+        <ul class="list-group">
+            {{# each products}}
+            <li class="list-group-item">
+                <strong>{{this.item.title}}</strong>
+                 <span class="badge badge-pill badge-info" style="margin-right:6%;font-size: 17px;" >{{this.qty}}</span>
+                <div class="btn-group" >
+                    <button class="btn btn-success btn-xs dropdown-toggle" style="margin-top:11%;" type="button" data-toggle="dropdown">Action
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="/reduce/{{this.item._id}}">Reduce by 1</a>
+                        </li>
+                        <li>
+                            <a href="/remove/{{this.item._id}}">Remove all</a>
+                        </li>
+                    </ul>
+
+                </div>
+               
+                <span class="badge badge-pill badge-info"  style="margin-right:6%;font-size: 17px;"><bold>$</bold>{{this.price}}</span>
+                
+            </li>
+
+            {{/each}}
+
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class=" col-md-6">
+        <span style="margin-bottom:500px;font-weight:bold">Total Price:{{totalPrice}}</span>
+
+        
+        {{!-- <a href="/checkout" type="button" class="btn btn-success">Checkout</a>  --}}
+        <form action="/charge" method="POST">
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+             data-key="pk_test_JT4p2RyWBCBJDgAb6o1ChzmP" 
+             data-amount="{{totalPrice}}"
+             data-name="Srishtie" 
+             data-description="Ecommerce" 
+             data-image="https://www.fixpocket.com/public_assets/uploads/beats/1511255624wwf-logo-design.jpg"
+             data-locale="auto">
+                </script>
+        </form>
+    </div>
+</div>
+{{else}}
+<div class="row">
+    <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+        <h2>No Items in cart</h2>
+    </div>
+</div>
+{{/if}}

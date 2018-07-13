@@ -1,0 +1,33 @@
+<style>
+    .price{
+        margin-top:50px;
+        margin-left:50px;
+        
+        }
+        .btn{
+            margin-top:-28px;
+        }
+    </style> 
+{{# each products}}
+<div class="row">
+    {{# each this }}
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <center>
+                <img class="hey" src="{{this.imagePath}}" class="img-responsive" alt="itempic">
+            </center>
+            <div class="caption">
+                <h3 class="hi">{{this.title}}</h3>
+                <p class="description">
+                   {{this.description}}</p>
+                <div class="clearfix">
+                    <div class="price">Price: ${{this.price}}
+                   <a href="/add-to-cart/{{this._id}}" class="btn btn-success" role="button">Add to cart</a>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/each}}

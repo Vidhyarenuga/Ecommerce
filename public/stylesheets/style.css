@@ -1,0 +1,43 @@
+body{
+  background-color: green;
+}
+.thumbnail img{
+  max-height:150px;
+  
+
+}
+.thumbnail .description{
+  color:grey;
+  margin:10px;
+}
+.price{
+  font-weight: bold;
+  font-size:16px;
+  margin:10px;
+}
+.btn {
+  margin-left:60%;
+  margin-bottom: 15px;
+}
+.thumbnail{
+  border:1px solid lightgrey;
+  margin-top:25px;
+  background-color: white
+}
+.hi{
+  margin-top:10px;
+  margin-left: 130px;
+}
+.hey{
+  margin-top: 20px;
+  width:60%;
+  height:200px
+}
+.panda{
+  width:8%;
+  height:8%;
+}
+.btn-group
+{
+  margin-right: 50px;
+}
